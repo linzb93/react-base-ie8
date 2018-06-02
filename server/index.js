@@ -19,14 +19,15 @@ const compiler = webpack(webpackConfig, (err) => {
 });
 // 启动服务器
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
     publicPath: '/',
     quiet: true
 });
 // 热更新
-// const hotMiddleware = require('webpack-hot-middleware')(compiler);
+const hotMiddleware = require('webpack-hot-middleware')(compiler);
 
 app.use(devMiddleware);
-// app.use(hotMiddleware);
+app.use(hotMiddleware);
 
 // devMiddleware.waitUntilValid(() => {
 //     openWindow('http://localhost:' + port);

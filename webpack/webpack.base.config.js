@@ -16,18 +16,15 @@ module.exports = {
                 use: 'css-loader'
             },
             {
-                test: /.\js$/,
+                test: /\.js$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
             },
             {
-                test: /.\html$/,
+                test: /\.html$/,
                 use: 'html-loader',
                 exclude: /node_modules/
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({template: './src/index.html'})
-    ]
+    }
 };
