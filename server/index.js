@@ -12,11 +12,7 @@ if (process.env.NODE_ENV === 'development') {
     webpackConfig = require('../webpack/webpack.prod.config');
 }
 
-const compiler = webpack(webpackConfig, (err) => {
-    if (err) {
-        throw err;
-    }
-});
+const compiler = webpack(webpackConfig);
 // 启动服务器
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
     noInfo: true,
