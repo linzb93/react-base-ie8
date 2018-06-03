@@ -29,13 +29,15 @@
           ]
         ],
         "plugins": [
-          "add-module-exports",
-          "transform-class-properties",
-          "syntax-async-generators",
           "transform-react-remove-prop-types",
           "transform-react-constant-elements",
           "transform-react-inline-elements"
         ]
       }
-    }
+    },
+    "plugins": [
+        "add-module-exports",
+        "transform-class-properties",
+        "syntax-async-generators"
+    ]
   }

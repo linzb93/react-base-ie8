@@ -1,10 +1,18 @@
 import "babel-polyfill";
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDom from 'react-dom'
+import App from './App';
 
-const App = () => <h1>25vv53</h1>;
+const render = () => {
+    ReactDOM.render(<App />,
+        document.getElementById('root'))
+}
 
-render(
-    <App />,
-  document.getElementById('root')
-)
+if (module.hot) {
+    module.hot.accept(["./App"], () => {
+      ReactDOM.unmountComponentAtNode(DOM);
+      render();
+    });
+  }
+  render();
+  
