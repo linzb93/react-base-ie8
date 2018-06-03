@@ -5,7 +5,8 @@ const webpackBaseConfig = require('./webpack.base.config');
 
 module.exports = merge(webpackBaseConfig, {
     entry: [
-        'webpack-hot-middleware/client?reload=true'
+        'webpack-hot-middleware/client?reload=true',
+        './src/index.js'
     ],
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),

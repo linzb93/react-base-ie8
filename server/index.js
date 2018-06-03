@@ -20,7 +20,9 @@ const devMiddleware = require('webpack-dev-middleware')(compiler, {
     quiet: true
 });
 // 热更新
-const hotMiddleware = require('webpack-hot-middleware')(compiler);
+const hotMiddleware = require('webpack-hot-middleware')(compiler, {
+    noInfo: true
+});
 
 app.use(devMiddleware);
 app.use(hotMiddleware);
