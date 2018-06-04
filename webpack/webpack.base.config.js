@@ -24,15 +24,6 @@ module.exports = {
                 test: /\.html$/,
                 use: 'html-loader',
                 exclude: /node_modules/
-            },
-            {
-                test: /\.(jpg|png|gif)/,
-                use: 'url-loader',
-                include: /src/
-            },
-            {
-                test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
-                use: "file-loader"
             }
         ]
     },
