@@ -13,21 +13,23 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const compiler = webpack(webpackConfig);
-// 启动服务器
-const devMiddleware = require('webpack-dev-middleware')(compiler, {
-    noInfo: true,
-    publicPath: '/',
-    quiet: true
-});
-// 热更新
-const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-    noInfo: true
-});
+if (process.env.NODE_ENV === 'development') {
+    // 启动服务器
+    const devMiddleware = require('webpack-dev-middleware')(compiler, {
+        noInfo: true,
+        publicPath: '/',
+        quiet: true
+    });
+    // 热更新
+    const hotMiddleware = require('webpack-hot-middleware')(compiler, {
+        noInfo: true
+    });
 
-app.use(devMiddleware);
-app.use(hotMiddleware);
+    app.use(devMiddleware);
+    app.use(hotMiddleware);
 
-// devMiddleware.waitUntilValid(() => {
-//     openWindow('http://localhost:' + port);
-// })
-app.listen(3000);
+    // devMiddleware.waitUntilValid(() => {
+    //     openWindow('http://localhost:' + port);
+    // })
+    app.listen(3000);
+}
