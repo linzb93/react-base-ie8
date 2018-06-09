@@ -4,7 +4,7 @@
   "description": "this is react project.",
   "scripts": {
     "start": "cross-env NODE_ENV=development node server",
-    "build": "cross-env NODE_ENV=production node server"
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.config.js"
   },
   "author": "linzb93",
   "license": "ISC",

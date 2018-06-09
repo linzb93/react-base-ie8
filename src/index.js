@@ -1,4 +1,4 @@
-import "babel-polyfill";
+// import "babel-polyfill";
 import React from 'react'
 import ReactDOM from "react-dom";
 import App from './App';
@@ -11,9 +11,8 @@ const render = () => {
 
 if (module.hot) {
     module.hot.accept(["./App"], () => {
-      ReactDOM.unmountComponentAtNode(DOM);
-      render();
+        ReactDOM.unmountComponentAtNode(DOM);
+        render();
     });
-  }
-  render();
-  
+}
+render();

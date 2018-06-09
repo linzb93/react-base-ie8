@@ -11,6 +11,28 @@
           ],
           "stage-0"
         ]
+      },
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": ["last 2 versions", "ie >= 8"]
+              },
+              "useBuiltIns": true,
+              "debug": false
+            }
+          ]
+        ],
+        "plugins": [
+          "add-module-exports",
+          "transform-class-properties",
+          "syntax-async-generators",
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
       }
     }
   }

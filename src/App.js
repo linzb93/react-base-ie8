@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const H3 = styled.h3`
     color: #f00;
-`
+`;
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
