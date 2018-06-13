@@ -1,9 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const H3 = styled.h3`
-    color: #f00;
-`;
 
 export default class App extends React.Component {
     constructor(props) {
@@ -12,13 +7,13 @@ export default class App extends React.Component {
     }
 
     cli() {
-        console.log('click23');
+        alert('click23');
     }
 
     render() {
         return (
             <div>
-                <H3 onClick={this.cli}>Click</H3>
+                <h3 onClick={this.cli}>Click</h3>
             </div>
         );
     }
