@@ -27,7 +27,9 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler, {
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
+app.use('/', require('../controller'));
+
 // devMiddleware.waitUntilValid(() => {
 //     openWindow('http://localhost:' + port);
 // })
-app.listen(3000);
+app.listen(port);

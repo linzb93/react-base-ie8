@@ -8,6 +8,7 @@ const dir = require('../server/utils').dir;
 
 module.exports = merge(webpackBaseConfig, {
     entry: [
+        'babel-polyfill',
         'webpack-hot-middleware/client?reload=true',
         './src/index.js'
     ],
@@ -15,6 +16,18 @@ module.exports = merge(webpackBaseConfig, {
         filename: 'app.js',
         path: dir('./build'),
         publicPath: '/'
+    },
+    module: {
+        rules: [
+            // {
+            //     test: /\.(js|jsx)$/,
+            //     enforce: 'post',
+            //     loaders: ['es3ify-loader'],
+            //     include: [
+            //         dir('./src'), dir('./node_modules/babel-polyfill')
+            //     ]
+            // }
+        ]
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
